@@ -8,7 +8,7 @@
 <!-- main content area start -->
 <div class="main-content">
 
-
+<example-component></example-component>
 
 
 
