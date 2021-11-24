@@ -8,11 +8,11 @@
 <!-- main content area start -->
 <div class="main-content">
 
-<example-component></example-component>
+    {{-- <dashboard-component></dashboard-component> --}}
 
+    <router-view></router-view>
 
-
-    <div class="main-content-inner">
+    {{-- <div class="main-content-inner">
         <!-- sales report area start -->
         <div class="sales-report-area mt-5 mb-5">
             <div class="row">
@@ -363,7 +363,7 @@
             <!-- exchange area end -->
         </div>
         <!-- row area start-->
-    </div>
+    </div> --}}
 </div>
 <!-- main content area end -->
 @endsection

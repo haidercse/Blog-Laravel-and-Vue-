@@ -18,7 +18,7 @@
     <!-- preloader area end -->
     <!-- page container area start -->
     <div class="page-container" id="app">
-
+      
        {{--  //header  --}}
         @include('backend.layouts.partials.header')
 
@@ -27,7 +27,7 @@
         @include('backend.layouts.partials.sidebar')
 
          @yield('admin-content')
-
+        
         @include('backend.layouts.partials.footer')
 
     </div>

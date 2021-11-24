@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoriesController extends Controller
 {
@@ -36,7 +37,21 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      
+        $request->validate([
+            'name' => 'required|unique:categories|max:255',
+            'status' => 'required',
+        ]);
+        
+         $category = new Category();
+         $category->name = $request->name;
+         $category->status = $request->status;
+         $category->slug = Str::slug($request->name);
+         $category->save();
+         return response()->json([
+             'success' => true,
+             'data' => $category,
+         ],200);
     }
 
     /**

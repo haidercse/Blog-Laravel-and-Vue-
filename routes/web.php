@@ -23,9 +23,11 @@ Route::get('/', function () {
 Route::group(['prefix'=>'admin'], function(){
     Route::get('/dashboard',[DashboardController::class,'index']);
 
+    Route::get('/{any}',[DashboardController::class,'index'])->where('any', '.*');
+
     //CATEGORY
-    Route::resource('category', CategoriesController::class);
-    Route::resource('post', PostController::class);
+     Route::post('/add-category',[CategoriesController::class,'store'])->name('category.store');
+    // Route::resource('post', PostController::class);
 });
 
 Auth::routes();
