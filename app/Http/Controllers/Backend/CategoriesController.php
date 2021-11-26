@@ -16,7 +16,12 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return Category::with('posts')->get();
+        $categories =  Category::all();
+      
+        return response()->json([
+            'success' => true,
+            'data' => $categories,
+        ],200);
     }
 
     /**
@@ -94,8 +99,15 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        $category = Category::where('slug',$slug)->first();
+        if (!is_null($category)) {
+            $category->delete();
+        }
+        return response()->json([
+            'success' => true,
+            'data' => $category
+        ]);
     }
 }

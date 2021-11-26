@@ -29,9 +29,11 @@
     },
     "dependencies": {
         "admin-lte": "^3.0.5",
+        "moment": "^2.29.1",
         "sweetalert2": "^11.2.0",
         "toastr": "^2.1.4",
         "vform": "^2.1.2",
+        "vue-sweetalert2": "^5.0.2",
         "vue-toasted": "^1.1.28",
         "vue-toastr": "^2.1.2"
     }

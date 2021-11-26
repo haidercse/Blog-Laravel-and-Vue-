@@ -23,10 +23,14 @@ Route::get('/', function () {
 Route::group(['prefix'=>'admin'], function(){
     Route::get('/dashboard',[DashboardController::class,'index']);
 
-    Route::get('/{any}',[DashboardController::class,'index'])->where('any', '.*');
+    // Route::get('/{any}',[DashboardController::class,'index'])->where('any', '.*');
 
     //CATEGORY
+     Route::get('/category/get-category',[CategoriesController::class,'index']);
      Route::post('/add-category',[CategoriesController::class,'store'])->name('category.store');
+     Route::get('/category/remove-category/{slug}',[CategoriesController::class,'destroy']);
+    
+
     // Route::resource('post', PostController::class);
 });
 
